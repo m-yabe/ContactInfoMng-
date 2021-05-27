@@ -1,0 +1,25 @@
+.body {
+    /*親要素*/
+    position: relative;
+    background: white;
+    height: 200px;
+  }
+  
+  .body p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+    width: 100px;
+    /*BOX内の文字も中央寄せ*/
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    color:honeydew;
+    text-shadow: 0 0 15px #b7046c;
+    font-size: 30px;
+    font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "メイリオ", sans-serif;
+  }

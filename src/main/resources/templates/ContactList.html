@@ -1,0 +1,57 @@
+<!-- お問い合わせ一覧 -->
+<!--お問い合わせ一覧-->
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">    
+<title>お問い合わせ一覧</title>   
+<link th:href="@{/css/ContactList.css}" rel="stylesheet" type="text/css">
+<body>
+    <div id="wrapper" class="wrapper lower contact">
+        <main class="inner">
+    <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
+                
+          <div class="fixed">
+            <input id="list" type="button" style="color:white;background-color:#b7046c;" class="btn-cmn--purple btn-cmn--lg" value="入力フォーム">
+            <input id="list" type="button" style="color:white;background-color:#b7046c;" class="btn-cmn--purple btn-cmn--lg" value="お問い合せ一覧">
+          </div>
+          <h1 class="ttl-lower--sm">
+            お問い合わせ一覧<br>
+            <span class="under1">
+            <span class="ttl-lower__en">LIST</span>
+            </span>
+          </h1>
+          <!-- お問い合わせ種別 -->
+          <!-- <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b7046c;"></div> -->
+          <div class= "contacttype" style="text-align:center">
+            <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #b7046c;">
+           <form action=”type”>
+                お問い合わせ種別
+                <select name=”お問い合わせ種別” size=”3″>
+                <option value=”1″>                </option>
+                </select>
+                </form><form action=”type”>
+            <!--お問い合わせ内容-->
+            <div style="float: right">
+            <label for="contents">お問い合わせ内容</label>
+            <input id ="contents" type="text "name="names" ></div><br>
+            <!--企業・団体・組織名-->
+            <label for="company">企業・団体・組織名</label>
+            <input id ="company" type="text "name="names" >
+            <!-- お名前 -->
+            <label for="name">お名前</label>
+            <input id ="name" type="text "name="names" >
+          </div> 
+    <p style="text-align:center"><button type="button" style="color:white;background-color:#b7046c;">検索</button>
+        </div>
+        </div>
+    </div>   
+</main>
+</div> 
+<script src="ContactList.js"></script>
+</body>
+</head>     
+</html>

@@ -1,0 +1,46 @@
+<!--対応入力フォーム-->
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">    
+<title>対応者入力ホーム</title>   
+<link th:href="@{/css/ContactReception.css}" rel="stylesheet" type="text/css">
+<body>
+    <div id="wrapper" class="wrapper lower contact">
+        <main class="inner">
+          <!-- 二重枠 -->
+          <div style="padding: 10px; margin-bottom: 10px; border: 5px double #333333;">    
+          <div class="">
+            <input id="list" type="button" style="color:white;background-color:#b7046c;" style="width:200px;height:50px" class="btn-cmn--purple btn-cmn--lg" value="入力フォーム">
+            <input id="list" type="button" style="color:white;background-color:#b7046c;" style="width:200px;height:50px" class="btn-cmn--purple btn-cmn--lg" value="お問い合せ一覧">
+          </div>
+          <h1 class="ttl-lower--sm">
+            対応者入力ホーム<br>
+            <span class="ttl-lower__en">LIST</span>
+          </h1>
+          <!-- 受付日時 -->
+          <h2 style="text-align:center">
+          <div class= "day">
+              <label for="date">受付日時</label>
+              <input type="text "name="day" id="date">
+          </div>
+          <!-- 対応者の選択 -->
+          <h2 style="text-align:center"><form action=”#”>
+            対応者
+            <select name=”必須” size=”3″>
+            <option value=”1″></option>
+            </select>
+            </form><form action=”#”>
+            </h2>
+          <p style="text-align:center"><button type="button" style="color:white;background-color:#b7046c;">登録</button>
+        </div>
+      </div>
+</main>
+</div>
+<script src="ContactReception.js"></script>
+</body>
+</head>     
+</html>
