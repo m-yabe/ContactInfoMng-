@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+//@IdClass(McodePK.class)
 @Entity
 @Table(name="M_code")
 public class Code {
@@ -143,41 +143,42 @@ public class Code {
 	public String getupdate_USER() {
 		return UPDATE_USER;
 	}
-}
-//	public void setupdate_USER(String UPDATE_USER) {
-//		this.UPDATE_USER = UPDATE_USER;
-//	}
-//	public void setAll(  String CODE_CD
-//						,String CODE_CLASS
-//						,String CODE_VALUE
-//						,String CODE_NAME
-//						,String CODE_DESC
-//						,String CODE_NUM1
-//						,String CODE_NUM2
-//						,String CODE_NUM3
-//						,String CODE_CHAR1
-//						,String CODE_CHAR2
-//						,String CODE_CHAR3
-//						,String CREATE_DATE
-//						,String CREATE_USER
-//						,String UPDATE_DATE
-//						,String UPDATE_USER
-//						
-//						) {
-//		this.CODE_CD = CODE_CD;
-//		this.CODE_CLASS = CODE_CLASS;
-//		this.CODE_VALUE = CODE_VALUE;
-//		this.CODE_NAME = CODE_NAME;
-//		this.CODE_DESC = CODE_DESC;
-//		this.CODE_NUM1 = CODE_NUM1;
-//		this.CODE_NUM2 = CODE_NUM2;
-//		this.CODE_NUM3 = CODE_NUM3;
-//		this.CODE_CHAR1 = CODE_CHAR1;
-//		this.CODE_CHAR2 = CODE_CHAR2;
-//		this.CODE_CHAR3 = CODE_CHAR3;
-//		this.CREATE_DATE = CREATE_DATE;
-//		this.CREATE_USER = CREATE_USER;
-//		this.UPDATE_DATE = UPDATE_DATE;
-//		this.UPDATE_USER = UPDATE_USER;
-//		
-//	}
+
+	public void setupdate_USER(String UPDATE_USER) {
+		this.UPDATE_USER = UPDATE_USER;
+	}
+	public void setAll(  String CODE_CD
+						,String CODE_CLASS
+						,String CODE_VALUE
+						,String CODE_NAME
+						,String CODE_DESC
+						,String CODE_NUM1
+						,String CODE_NUM2
+						,String CODE_NUM3
+						,String CODE_CHAR1
+						,String CODE_CHAR2
+						,String CODE_CHAR3
+						,String CREATE_DATE
+						,String CREATE_USER
+						,String UPDATE_DATE
+						,String UPDATE_USER
+						
+						) {
+		this.CODE_CD = CODE_CD;
+		this.CODE_CLASS = CODE_CLASS;
+		this.CODE_VALUE = CODE_VALUE;
+		this.CODE_NAME = CODE_NAME;
+		this.CODE_DESC = CODE_DESC;
+		this.CODE_NUM1 = CODE_NUM1;
+		this.CODE_NUM2 = CODE_NUM2;
+		this.CODE_NUM3 = CODE_NUM3;
+		this.CODE_CHAR1 = CODE_CHAR1;
+		this.CODE_CHAR2 = CODE_CHAR2;
+		this.CODE_CHAR3 = CODE_CHAR3;
+		this.CREATE_DATE = CREATE_DATE;
+		this.CREATE_USER = CREATE_USER;
+		this.UPDATE_DATE = UPDATE_DATE;
+		this.UPDATE_USER = UPDATE_USER;
+		
+	}
+}	

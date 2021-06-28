@@ -1,6 +1,7 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="format-detection" content="telephone=no">
@@ -20,15 +21,19 @@
 <link rel="apple-touch-icon" href="common/img/ico/webclip.png">
 <meta name="theme-color" content="#b7046c">
 
-<link rel="stylesheet" href="ContactInput.css">
+<!--<link rel="stylesheet" href="ContactInput.css">-->
+
 <link th:href="@{/css/ContactInput.css}" rel="stylesheet" type="text/css">
+</head>
 
 <body>
+<!--データを渡す
+<input type="hidden" value="data" id="hidden1" />-->
 <div id="wrapper" class="wrapper lower contact">
   <main class="inner">
-    <div class="">
-      <input id="list" type="button"   class="btn-cmn--purple btn-cmn--lg" value="入力フォーム">
-      <input id="list" type="button"  class="btn-cmn--purple btn-cmn--lg" value="お問い合せ一覧">
+    <div class="pink">
+     <input id="list" type="button" onclick="location.href='/contact/inputForm'"  class="btn-cmn--purple btn-cmn--lg" value="入力フォーム">
+      <input id="list" type="button" onclick="location.href='/contact/list'" class="btn-cmn--purple btn-cmn--lg" value="お問い合せ一覧">
     </div>
     <h1 class="ttl-lower--sm">
       お問い合わせ
@@ -37,7 +42,8 @@
     <div class="section-cmn">
       <p class="font-bold">お問い合わせの際は、下記のフォームをご利用ください。<span class="ico-required mr05">必須</span>は必須項目ですので、必ずご入力ください。</p>
       
-      <form method="post" action="index.php" enctype="multipart/form-data">
+      <!--登録確認画面にPOST送信する-->
+      <form action="@{/contact/confirmation}" method="post"entype ="multipart/from-date">
         <table class="table-cmn contact-form">
           <tr>
             <th width="260">
@@ -47,8 +53,8 @@
               </div>
             </th>
             <td>
-              <select name="お問い合わせ種別" class="contact-select" required>
-                <option value="">選択してください</option>
+              <select name="contact_cd" class="contact-select" required>
+                <option value="000">選択してください</option>
                 <option value="会社について" >会社について</option>
                 <option value="事業内容について" >事業内容について</option>
                 <option value="協業パートナーについて" >協業パートナーについて</option>
@@ -62,7 +68,8 @@
               企業・団体・組織名
             </th>
             <td>
-              <input type="text"  name="企業・団体・組織名" class="contact-input" placeholder="記 : 株式会社 CRドットアイ" value="">
+              <!-- 企業・団体・組織名 -->
+              <input type="text" maxlength ="50" name="company" class="contact-input" placeholder="記 : 株式会社 CRドットアイ" value="">
             </td>
           </tr>
           <tr>
@@ -75,10 +82,10 @@
             <td>
               <div class="contact-half">
                 <div class="contact-half__item">
-                  <input type="text"  name="姓" class="contact-input" placeholder="姓 : 山田" value="" required>
+                  <input type="text" maxlength ="10" name="register1" class="contact-input" placeholder="姓 : 山田" value="" required>
                 </div>
                 <div class="contact-half__item">
-                  <input type="text" name="名" class="contact-input" placeholder="名 : 太郎" value="" required>
+                  <input type="text" maxlength ="10" name="register2" class="contact-input" placeholder="名 : 太郎" value="" required>
                 </div>
               </div>
             </td>
@@ -92,11 +99,11 @@
             </th>
             <td>
               <div class="contact-tel">
-                <input type="tel"  name="電話番号1" class="contact-input contact-tel__item contact-tel__input" value="" placeholder="03" maxlength="3" required>
+                <input type="tel"  name="tel1" id="tel1" class="contact-input contact-tel__item contact-tel__input" value="" placeholder="03" maxlength="5" required>
+                <span class="contact-tel__item  contact-tel__ico">-</span>
+                <input type="tel"  name="tel2" id="tel2" class="contact-input contact-tel__item contact-tel__input" value="" placeholder="3345" maxlength="4" required>
                 <span class="contact-tel__item contact-tel__ico">-</span>
-                <input type="tel"  name="電話番号2" class="contact-input contact-tel__item contact-tel__input" value="" placeholder="3345" maxlength="4" required>
-                <span class="contact-tel__item contact-tel__ico">-</span>
-                <input type="tel" name="電話番号3" class="contact-input contact-tel__item contact-tel__input" value="" placeholder="2772" maxlength="4" required>
+                <input type="tel"  name="tel3" id="tel3" class="contact-input contact-tel__item contact-tel__input" value="" placeholder="2772" maxlength="4" required>
               </div>
             </td>
           </tr>
@@ -108,7 +115,8 @@
               </div>
             </th>
             <td>
-              <input type="email"  name="メールアドレス" class="contact-input" placeholder="info@crdoti.co.jp" value="" required>
+              <input type="email" maxlength="100"  name="mail" class="contact-input" placeholder="info@crdoti.co.jp" value="" required>
+
             </td>
           </tr>
           <tr>
@@ -117,9 +125,9 @@
             </th>
             <td>
               <div class="contact-zip">
-                <input type="tel"  name="郵便番号1" maxlength="3" value="" class="contact-input contact-zip__item contact-zip__input">
+                <input type="postal"  name="post1" maxlength="3" value="" class="contact-input contact-zip__item contact-zip__input">
                 <div class="contact-zip__item contact-zip__ico">-</div>
-                <input type="tel"  name="郵便番号2" maxlength="4" value="" class="contact-input contact-zip__item contact-zip__input">
+                <input type="postal"  name="post2" maxlength="4" value="" class="contact-input contact-zip__item contact-zip__input">
                 <button class="contact-zip__item contact-zip__btn" onClick="AjaxZip3.zip2addr('郵便番号1','郵便番号2','ご住所', 'ご住所'); return false;">住所検索</button>
               </div>
             </td>
@@ -129,7 +137,7 @@
               ご住所
             </th>
             <td>
-              <input type="text"  name="ご住所" class="contact-input">
+              <input type="text" maxlength="200" name="street_address" class="contact-input">
             </td>
           </tr>
           <tr>
@@ -140,10 +148,11 @@
               </div>
             </th>
             <td>
-              <textarea name="お問い合わせ内容" class="contact-txt-area" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+              <textarea name="contents" class="contact-txt-area" placeholder="お問い合わせ内容をご記入ください" required></textarea>
             </td>
           </tr>
         </table>
+      </form>
         <div class="section-cmn pb00">
           <div class="contact-privacy">
             <p class="contact-privacy__ttl">個人情報の取り扱いについて</p>
@@ -177,7 +186,7 @@
               <p id="agreeCheck" class="txt-paragraph font-bold font-red mb30" style="display: none;">同意いただけない場合、送信できません。</p>
               <button id="submit" type="submit" class="btn-cmn--purple btn-cmn--lg ico-arrow-trigger btn-hover-trigger contact-privacy-agree__btn" disabled>
                 <span class="btn-cmn__ico ico-arrow-long--white"></span>
-                <span class="btn-cmn__txt" input type="submit" value="送信">送信</span>
+                <span class="btn-cmn__txt">送信</span>
               </button>
             </div>
           </div>
@@ -185,7 +194,11 @@
       </form>
     </div>
   </main>
+  <!--例外処理タイムリーフ-->
+  <input type="hidden" th:value=${eror} id="er">
 </div>
-<script src="ContactInput.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/javascript/ContactInput.js"></script>
 </body>
 </html>

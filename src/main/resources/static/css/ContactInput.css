@@ -315,7 +315,8 @@ margin
 .ml50 {
   margin-left: 50px !important; }
 
- /* .mt {
+
+  /*
   #styleguide
   マージン（PCのみ）
   ※SP&タブレット時はすべて0になります。
@@ -333,7 +334,8 @@ margin
   <p class="mr-pc-10">margin-right:  10px;</p>
   <p class="mr-pc-20">margin-right:  20px;</p>
 
-  ``
+  ```
+
   */
   /*
   #styleguide
@@ -355,7 +357,7 @@ margin
 
   ```
 
-   }*/
+  */ 
   @media only screen and (min-width: 1025px) {
     .mt-pc-10 {
       margin-top: 10px !important; }
@@ -869,7 +871,7 @@ input:not([type="radio"]):not([type="checkbox"]),
 button,
 select,
 textarea {
-  -webkit-border-radius: 0;
+ /*-webkit-border-radius: 0;*/
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
   -moz-appearance: none;
@@ -1431,7 +1433,7 @@ textarea {
       .mega-menu-btn__ico {
         display: block;
         margin-right: 2vw;
-        vertical-align: middle;
+        /*vertical-align: middle;*/
         -webkit-transition: .2s;
         -o-transition: .2s;
         transition: .2s; } }
@@ -7868,4 +7870,3 @@ _:-ms-fullscreen .history-list__item:last-child .history-list-right:before, :roo
   @media only screen and (min-width: 1px) and (max-width: 767px) {
     .policy-ttl {
       margin-bottom: 3.5vw; } }
-

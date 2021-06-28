@@ -10,39 +10,39 @@ import javax.persistence.Table;
 public class Contact {
 
 	@Id
-	@Column(name="CONTACT_NO" ,columnDefinition = "int")
-	private String CONTACT_NO;
+	@Column(name="contact_no",columnDefinition="int")
+	private String contact_no;
+	//お問い合わせ種別
+	@Column(name= "contact_cd",columnDefinition = "varchar(3)")
+	private String contact_cd;
+	//企業・団体・組織名
+	@Column(name="company" ,columnDefinition = "varchar(100)")
+	private String company;
+	//お名前
+	@Column(name="register" ,columnDefinition = "varchar(41)")
+	private String register;
+	//電話番号
+	@Column(name="tel" ,columnDefinition = "varchar(13)")
+	private String tel;
+	//メールアドレス
+	@Column(name="mall",columnDefinition = "varchar(100)")
+	private String mall;
+	//郵便番号
+	@Column(name="postal_code" ,columnDefinition = "DEFAULT")
+	private String postal_code;
+	//ご住所
+	@Column(name="street_address" ,columnDefinition = "varchar(400)")
+	private String street_address;
+	//お問い合わせ内容
+	@Column(name="contents" ,columnDefinition = "varchar(2000)")
+	private String contents;
 	
-	@Column(name= "CONTACT_CD" ,columnDefinition = "varchar(3)")
-	private String CONTACT_CD;
-	
-	@Column(name="COMPANY" ,columnDefinition = "varchar(100)")
-	private String COMPANY;
-	
-	@Column(name="REGISTER" ,columnDefinition = "varchar(41)")
-	private String REGISTER;
-	
-	@Column(name="TEL" ,columnDefinition = "varchar(13)")
-	private String TEL;
-	
-	@Column(name="MALL" ,columnDefinition = "varchar(100)")
-	private String MALL;
-	
-	@Column(name="POSTAL_CODE" ,columnDefinition = "DEFAULT")
-	private String POSTAL_CODE;
-	
-	@Column(name="STREET_ADDRESS" ,columnDefinition = "varchar(400)")
-	private String STREET_ADDRESS;
-	
-	@Column(name="CONTENTS" ,columnDefinition = "varchar(2000)")
-	private String CONTENTS;
-	
-	@Column(name="SALE_STAFF_NO" ,columnDefinition = "varchar(5)")
-	private String SALE_STAFF_NO;
-	
-	@Column(name="RECEPTION_DATE" ,columnDefinition = "datetime")
-	private String RECEPTION_DATE;
-	
+//	@Column(name="SALE_STAFF_NO" ,columnDefinition = "varchar(5)")
+//	private String SALE_STAFF_NO;
+//	
+//	@Column(name="RECEPTION_DATE" ,columnDefinition = "datetime")
+//	private String RECEPTION_DATE;
+//	
 	@Column(name="CREATE_DATE" ,columnDefinition = "datetime")
 	private String CREATE_DATE;
 	
@@ -54,74 +54,76 @@ public class Contact {
 
 	@Column(name="UPDATE_USER" ,columnDefinition = "varchar(10)")
 	private String UPDATE_USER;
+
 	
 	
 	public String getcontact_NO() {
-		return CONTACT_NO;
+		return contact_no;
 	}
-	public void setcontact_NO(String CONTACT_NO) {
-		this.CONTACT_NO = CONTACT_NO;
+	
+	public void setcontact_NO(String Contact_no) {
+		this.contact_no = Contact_no;
 	}
 	public String getcontact_CD() {
-		return CONTACT_CD;
+		return contact_cd;
 	}
-	public void setcontact_CD(String CONTACT_CD) {
-		this.CONTACT_CD = CONTACT_CD;
+	public void setcontact_CD(String Contact_cd) {
+		this.contact_cd = Contact_cd;
 	}
 	public String getcompany() {
-		return COMPANY;
+		return company;
 	}
-	public void setcompany(String COMPANY) {
-		this.COMPANY = COMPANY;
+	public void setcompany(String Company) {
+		this.company = Company;
 	}
 	public String getregister() {
-		return REGISTER;
+		return register;
 	}
-	public void setregister(String REGISTER) {
-		this.REGISTER= REGISTER;
+	public void setregister(String register1,String register2) {
+		this.register= register1+" "+register2;
 	}
 	public String gettel() {
-		return TEL;
+		return tel;
 	}
-	public void settel(String TEL) {
-		this.TEL = TEL;
+	public void settel(String tel1,String tel2,String tel3) {
+		this.tel = tel1 +"-"+ "tel2" +"tel3";
 	}
-	public String getmall() {
-		return MALL;
+	public String getmail() {
+		return mall;
 	}
-	public void setmall(String MALL) {
-		this.MALL = MALL;
+	public void setmall(String Mall) {
+		this.mall = Mall;
 	}
 	public String getpostal_CODE() {
-		return POSTAL_CODE;
+		return postal_code;
 	}
-	public void setpostal_CODE(String POSTAL_CODE) {
-		this.POSTAL_CODE = POSTAL_CODE;
+	public void setpostal_CODE(String post1,String post2) {
+		this.postal_code = post1+"-"+post2;
 	}
 	public String getstreet_ADDRESS() {
-		return STREET_ADDRESS;
+		return street_address;
 	}
-	public void setstreet_ADDRESS(String STREET_ADDRESS) {
-		this.STREET_ADDRESS = STREET_ADDRESS;
+	public void setstreet_ADDRESS(String Street_address) {
+		this.street_address = Street_address;
 	}
 	public String getcontents() {
-		return CONTENTS;
+		return contents;
 	}
-	public void setcontents(String CONTENTS) {
-		this.CONTENTS = CONTENTS;
+	public void setcontents(String Contents) {
+		this.contents = Contents;
 	}
-	public String getsale_STAFF_NO() {
-		return SALE_STAFF_NO;
-	}
-	public void setsale_STAFF_NO(String SALE_STAFF_NO) {
-		this.SALE_STAFF_NO = SALE_STAFF_NO;
-	}
-	public String getreception_DATE() {
-		return RECEPTION_DATE;
-	}
-	public void setreception_DATE(String RECEPTION_DATE) {
-		this.RECEPTION_DATE = RECEPTION_DATE;
-	}
+//	public String getsale_STAFF_NO() {
+//		return SALE_STAFF_NO;
+//	}
+//	public void setsale_STAFF_NO(String SALE_STAFF_NO) {
+//		this.SALE_STAFF_NO = SALE_STAFF_NO;
+//	}
+//	public String getreception_DATE() {
+//		return RECEPTION_DATE;
+//	}
+//	public void setreception_DATE(String RECEPTION_DATE) {
+//		this.RECEPTION_DATE = RECEPTION_DATE;
+//	}
 	public String getcreate_DATE() {
 		return CREATE_DATE;
 	}
@@ -143,42 +145,34 @@ public class Contact {
 	public String getupdate_USER() {
 		return UPDATE_USER;
 	}
-//	public void setupdate_USER(String UPDATE_USER) {
-//		this.UPDATE_USER = UPDATE_USER;
-//	}
-//	public void setAll(  String CONTACT_NO
-//						,String CONTACT_CD
-//						,String COMPANY
-//						,String REGISTER
-//						,String TEL
-//						,String MALL
-//						,String POSTAL_CODE
-//						,String STREET_ADDRESS
-//						,String CONTENTS
-//						,String SALE_STAFF_NO
-//						,String RECEPTION_DATE
-//						,String CREATE_DATE
-//						,String CREATE_USER
-//						,String UPDATE_DATE
-//						,String UPDATE_USER
-//						
-//						) {
-//		this.CONTACT_NO = CONTACT_NO;
-//		this.CONTACT_CD = CONTACT_CD;
-//		this.COMPANY = COMPANY;
-//		this.REGISTER = REGISTER;
-//		this.TEL = TEL;
-//		this.MALL = MALL;
-//		this.POSTAL_CODE = POSTAL_CODE;
-//		this.STREET_ADDRESS = STREET_ADDRESS;
-//		this.CONTENTS = CONTENTS;
-//		this.SALE_STAFF_NO = SALE_STAFF_NO;
-//		this.RECEPTION_DATE = RECEPTION_DATE;
-//		this.CREATE_DATE = CREATE_DATE;
-//		this.CREATE_USER = CREATE_USER;
-//		this.UPDATE_DATE = UPDATE_DATE;
-//		this.UPDATE_USER = UPDATE_USER;
-//		
-//	}
+	public void setupdate_USER(String UPDATE_USER) {
+		this.UPDATE_USER = UPDATE_USER;
+	}
+	public void setAll(
+						String contact_cd
+						,String company
+						,String register1
+						,String register2
+						,String tel1
+						,String tel2
+						,String tel3
+						,String mall
+						,String post1
+						,String post2
+						,String street_addaress
+						,String contents
+						
+						) {
+		this.contact_cd = contact_cd;
+		this.company = company;
+		this.register = register1+register2;
+		this.tel = tel1+tel2+tel3;
+		this.mall = mall;
+		this.postal_code = post1+post2;
+		this.street_address = street_addaress;
+		this.contents = contents;
+		
+	}
+
 	
 }
