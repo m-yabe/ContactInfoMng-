@@ -1,5 +1,6 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
 <head>
 
 <meta charset="utf-8">
@@ -21,9 +22,9 @@
 <link rel="apple-touch-icon" href="common/img/ico/webclip.png">
 <meta name="theme-color" content="#b7046c">
 
-<!--<link rel="stylesheet" href="ContactInput.css">-->
+<link rel="stylesheet" href="ContactInput.css">
 
-<link th:href="@{/css/ContactInput.css}" rel="stylesheet" type="text/css">
+<!--<link th:href="@{/css/ContactInput.css}" rel="stylesheet" type="text/css">-->
 </head>
 
 <body>
@@ -31,7 +32,7 @@
 <input type="hidden" value="data" id="hidden1" />-->
 <div id="wrapper" class="wrapper lower contact">
   <main class="inner">
-    <div class="pink">
+    <div class="">
      <input id="list" type="button" onclick="location.href='/contact/inputForm'"  class="btn-cmn--purple btn-cmn--lg" value="入力フォーム">
       <input id="list" type="button" onclick="location.href='/contact/list'" class="btn-cmn--purple btn-cmn--lg" value="お問い合せ一覧">
     </div>
@@ -125,10 +126,10 @@
             </th>
             <td>
               <div class="contact-zip">
-                <input type="postal"  name="post1" maxlength="3" value="" class="contact-input contact-zip__item contact-zip__input">
+                <input type="postal" id="post1" name="post1" maxlength="3" value="" class="contact-input contact-zip__item contact-zip__input">
                 <div class="contact-zip__item contact-zip__ico">-</div>
-                <input type="postal"  name="post2" maxlength="4" value="" class="contact-input contact-zip__item contact-zip__input">
-                <button class="contact-zip__item contact-zip__btn" onClick="AjaxZip3.zip2addr('郵便番号1','郵便番号2','ご住所', 'ご住所'); return false;">住所検索</button>
+                <input type="postal" id="post2"  name="post2" maxlength="4" value="" class="contact-input contact-zip__item contact-zip__input">
+                <button class="contact-zip__item contact-zip__btn" onClick="AjaxZip3.zip2addr('post1','post2','street_address', 'street_address'); return false;">住所検索</button>
               </div>
             </td>
           </tr>
@@ -194,11 +195,11 @@
       </form>
     </div>
   </main>
-  <!--例外処理タイムリーフ-->
-  <input type="hidden" th:value=${eror} id="er">
+  <!--例外処理タイムリーフ
+  <input type="hidden" th:value=${eror} id="er">-->
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-<script type="text/javascript" src="/javascript/ContactInput.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="ContactInput.js"></script>
 </body>
 </html>
